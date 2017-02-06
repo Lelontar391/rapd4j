@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rapd4j.mapper.TExceptionMapper" >
+  <resultMap id="BaseResultMap" type="com.rapd4j.entity.TException" >
+    <id column="eid" property="eid" jdbcType="VARCHAR" />
+    <result column="e_resource" property="eResource" jdbcType="VARCHAR" />
+    <result column="e_created" property="eCreated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.rapd4j.entity.TException" extends="BaseResultMap" >
+    <result column="e_msg" property="eMsg" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    eid, e_resource, e_created
+  </sql>
+  <sql id="Blob_Column_List" >
+    e_msg
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.rapd4j.entity.TExceptionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.rapd4j.entity.TExceptionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_exception
+    where eid = #{eid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_exception
+    where eid = #{eid,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.rapd4j.entity.TExceptionExample" >
+    delete from t_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.rapd4j.entity.TException" >
+    insert into t_exception (eid, e_resource, e_created, 
+      e_msg)
+    values (#{eid,jdbcType=VARCHAR}, #{eResource,jdbcType=VARCHAR}, #{eCreated,jdbcType=TIMESTAMP}, 
+      #{eMsg,jdbcType=LONGVARBINARY})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rapd4j.entity.TException" >
+    insert into t_exception
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="eResource != null" >
+        e_resource,
+      </if>
+      <if test="eCreated != null" >
+        e_created,
+      </if>
+      <if test="eMsg != null" >
+        e_msg,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        #{eid,jdbcType=VARCHAR},
+      </if>
+      <if test="eResource != null" >
+        #{eResource,jdbcType=VARCHAR},
+      </if>
+      <if test="eCreated != null" >
+        #{eCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eMsg != null" >
+        #{eMsg,jdbcType=LONGVARBINARY},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.rapd4j.entity.TExceptionExample" resultType="java.lang.Integer" >
+    select count(*) from t_exception
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_exception
+    <set >
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eResource != null" >
+        e_resource = #{record.eResource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.eCreated != null" >
+        e_created = #{record.eCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.eMsg != null" >
+        e_msg = #{record.eMsg,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update t_exception
+    set eid = #{record.eid,jdbcType=VARCHAR},
+      e_resource = #{record.eResource,jdbcType=VARCHAR},
+      e_created = #{record.eCreated,jdbcType=TIMESTAMP},
+      e_msg = #{record.eMsg,jdbcType=LONGVARBINARY}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_exception
+    set eid = #{record.eid,jdbcType=VARCHAR},
+      e_resource = #{record.eResource,jdbcType=VARCHAR},
+      e_created = #{record.eCreated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.rapd4j.entity.TException" >
+    update t_exception
+    <set >
+      <if test="eResource != null" >
+        e_resource = #{eResource,jdbcType=VARCHAR},
+      </if>
+      <if test="eCreated != null" >
+        e_created = #{eCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="eMsg != null" >
+        e_msg = #{eMsg,jdbcType=LONGVARBINARY},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.rapd4j.entity.TException" >
+    update t_exception
+    set e_resource = #{eResource,jdbcType=VARCHAR},
+      e_created = #{eCreated,jdbcType=TIMESTAMP},
+      e_msg = #{eMsg,jdbcType=LONGVARBINARY}
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.rapd4j.entity.TException" >
+    update t_exception
+    set e_resource = #{eResource,jdbcType=VARCHAR},
+      e_created = #{eCreated,jdbcType=TIMESTAMP}
+    where eid = #{eid,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>rapd4j-parent</artifactId>
+		<groupId>com.rapd4j</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../rapd4j-parent</relativePath>
+	</parent>
+	<groupId>com.rapd4j</groupId>
+	<artifactId>rapd4j-common-web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>rapd4j-common-web</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.rapd4j</groupId>
+			<artifactId>rapd4j-common</artifactId>
+			<version>${rapd4j-common.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rapd4j</groupId>
+			<artifactId>rapd4j-project</artifactId>
+			<version>${rapd4j-project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.rapd4j</groupId>
+			<artifactId>rapd4j-service-api</artifactId>
+			<version>${rapd4j-service-api.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.rapd4j</groupId>
+			<artifactId>rapd4j-common-service</artifactId>
+			<version>${rapd4j-common-service.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>rapd4j-web</finalName>
+		<resources>
+			<resource>
+				<targetPath>${project.build.directory}/classes</targetPath>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+</project>

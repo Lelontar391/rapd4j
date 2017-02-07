@@ -1,3 +1,40 @@
 Manifest-Version: 1.0
-Class-Path: 
+Built-By: {xuzn}
+Build-Jdk: 1.6.0_13
+Class-Path: . lib/rapd4j-common-0.0.1-SNAPSHOT.jar lib/joda-time-2.5.j
+ ar lib/commons-lang3-3.3.2.jar lib/commons-io-2.5.jar lib/commons-net
+ -3.3.jar lib/jackson-databind-2.4.2.jar lib/jackson-annotations-2.4.0
+ .jar lib/jackson-core-2.4.2.jar lib/jackson-mapper-asl-1.9.13.jar lib
+ /jackson-core-asl-1.9.13.jar lib/httpclient-4.3.5.jar lib/httpcore-4.
+ 3.2.jar lib/spring-context-3.2.8.RELEASE.jar lib/spring-aop-3.2.8.REL
+ EASE.jar lib/aopalliance-1.0.jar lib/spring-core-3.2.8.RELEASE.jar li
+ b/spring-expression-3.2.8.RELEASE.jar lib/spring-beans-3.2.8.RELEASE.
+ jar lib/spring-webmvc-3.2.8.RELEASE.jar lib/spring-web-3.2.8.RELEASE.
+ jar lib/spring-jdbc-3.2.8.RELEASE.jar lib/spring-tx-3.2.8.RELEASE.jar
+  lib/spring-aspects-3.2.8.RELEASE.jar lib/aspectjweaver-1.7.4.jar lib
+ /commons-fileupload-1.3.1.jar lib/commons-pool-1.6.jar lib/commons-be
+ anutils-1.9.2.jar lib/commons-codec-1.10.jar lib/commons-logging-1.2.
+ jar lib/commons-lang-2.6.jar lib/commons-collections-3.0.jar lib/slf4
+ j-api-1.7.7.jar lib/jcl-over-slf4j-1.7.9.jar lib/logback-core-1.1.2.j
+ ar lib/logback-classic-1.1.2.jar lib/poi-ooxml-3.5-FINAL.jar lib/poi-
+ 3.5-FINAL.jar lib/ooxml-schemas-1.0.jar lib/xmlbeans-2.3.0.jar lib/st
+ ax-api-1.0.1.jar lib/dom4j-1.6.1.jar lib/xml-apis-1.0.b2.jar lib/jedi
+ s-2.7.2.jar lib/commons-pool2-2.3.jar lib/solr-solrj-4.10.3.jar lib/h
+ ttpmime-4.3.1.jar lib/wstx-asl-3.2.7.jar lib/noggit-0.5.jar lib/dubbo
+ -2.4.1.jar lib/javassist-3.15.0-GA.jar lib/netty-3.2.5.Final.jar lib/
+ zkclient-0.4.jar lib/log4j-1.2.14.jar lib/zookeeper-3.4.6.jar lib/slf
+ 4j-log4j12-1.6.1.jar lib/jline-0.9.94.jar lib/netty-3.7.0.Final.jar l
+ ib/grizzly-core-2.1.4.jar lib/grizzly-framework-2.1.4.jar lib/gmbal-a
+ pi-only-3.0.0-b023.jar lib/management-api-3.0.0-b012.jar lib/grizzly-
+ portunif-2.1.4.jar lib/grizzly-rcm-2.1.4.jar lib/cache-api-0.4.jar li
+ b/jetty-6.1.26.jar lib/jetty-util-6.1.26.jar lib/servlet-api-2.5-2008
+ 1211.jar lib/rapd4j-project-0.0.1-SNAPSHOT.jar lib/mybatis-3.2.8.jar 
+ lib/mybatis-spring-1.2.2.jar lib/mybatis-paginator-1.2.15.jar lib/pag
+ ehelper-3.4.2.jar lib/mysql-connector-java-5.1.32.jar lib/druid-1.0.9
+ .jar lib/rapd4j-service-api-0.0.1-SNAPSHOT.jar lib/shiro-spring-1.2.3
+ .jar lib/shiro-ehcache-1.2.3.jar lib/ehcache-core-2.5.0.jar lib/shiro
+ -core-1.2.3.jar lib/shiro-web-1.2.3.jar lib/shiro-quartz-1.2.3.jar li
+ b/quartz-1.6.1.jar
+Main-Class: com.alibaba.dubbo.container.Main
+Created-By: Maven Integration for Eclipse
 

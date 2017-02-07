@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+.popbox-titler {
+	position: relative;
+	background: #FFFFFF;
+	padding: 5px 15px;
+	cursor: move;
+	border-radius: 6px 6px 0 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.popbox-titler-text {
+	float: left;
+	color: #514151;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 0 1px 1px rgba(206, 206, 206, 0.4);
+}
+
+.popbox-titler-close {
+	color: #333;
+	font-size: 18px;
+	cursor: pointer;
+	float: right;
+}
+
+.popbox-wrapper {
+	padding: 15px;
+}
+
+.popbox-buttoner {
+	border-top: 1px solid #ccc;
+	padding: 5px 10px;
+	text-align: right;
+}
+
+.popbox-buttoner input {
+	padding: 5px 10px;
+	margin-left: 5px;
+	color: #333;
+	display: inline-block;
+	*display: inline;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+	box-shadow: 2px 1px 1px #e7e7e7;
+	vertical-align:  middle;
+	cursor: pointer;
+	border: 1px solid #bbbbbb;
+	border-radius: 4px;
+	*zoom: 1;
+	text-shadow: 0 1px 1px rgba(206, 206, 206, 0.4);
+	background-color: #F5F5F5;
+}
+
+.popbox-buttoner input:hover {
+	background-color: #e9e9e9;
+}
+
+.jquery-msgbox {
+	background: url(images/background.png) repeat-x left bottom;
+	padding-bottom: 55px;
+}
+
+.jquery-msgbox-wrapper {
+	padding: 20px 20px 20px 100px;
+	font-size: 14px;
+}
+
+.jquery-msgbox-buttons {
+	padding: 15px;
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.jquery-msgbox-buttons button,.jquery-msgbox-buttons input {
+	margin-left: 10px;
+	min-width: 85px;
+	cursor: pointer;
+}
+
+.jquery-msgbox-inputs {
+	margin-top: 4px;
+}
+
+.jquery-msgbox-inputs input {
+	display: block;
+	padding: 3px 2px;
+	border: 1px solid #dddddd;
+	margin: 3px 0 6px 0;
+	width: 95%;
+}
+
+.jquery-msgbox-label {
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.jquery-msgbox-alert {
+	background: url(images/alert.png) no-repeat 20px 20px;
+}
+
+.jquery-msgbox-info {
+	background: url(images/info.png) no-repeat 20px 20px;
+}
+
+.jquery-msgbox-error {
+	background: url(images/error.png) no-repeat 20px 20px;
+}
+
+.jquery-msgbox-prompt {
+	background: url(images/question.png) no-repeat 20px 20px;
+}
+
+.jquery-msgbox-confirm {
+	background: url(images/confirm.png) no-repeat 20px 20px;
+}
